@@ -3,6 +3,7 @@ import MY_SERVICE  from "../../services/index"
 import useForm from '../../hooks/useForm'
 import CryptoJS from 'crypto-js'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import FooterL from "./Footer";
 import NavbarTopSolid from "./NavbarSolid";
@@ -19,9 +20,8 @@ import {
 
 function Payment(props) {
   
-
+  
   const [form, handleInput] = useForm()
-  const [charge, setCharge] = useState({})
   const [cart, setCart] = useState([])
   const encryptText =(text)=> {
     let key = CryptoJS.enc.Utf8.parse('argylepaymentportal');
@@ -68,10 +68,9 @@ function Payment(props) {
 
   const login = async e => {
     e.preventDefault()
-    await MY_SERVICE
-      .login(loginData)
-      .then(({ data }) => {
-        console.log(data)
+    try{
+    const {data}  = await MY_SERVICE.login(loginData)
+
         axios.interceptors.request.use(function (config) {
             // Do something before request is sent
             config.headers["Authorization"] = 'JWT ' + data.data.token;
@@ -90,14 +89,11 @@ function Payment(props) {
                 cardName: 'Plain and Fancy Card',
                 userId: data.data.user.id
             };
-        console.log(dataCard)
+
          let sendData  =  {
                 
                 encryptedData: encryptText(JSON.stringify(dataCard))
             };
-        console.log(sendData)
-       
-
 
           let venueData ={
             active: true,
@@ -110,57 +106,68 @@ function Payment(props) {
           
         
         
-        axios({
+      const addCharge = await  axios({
          method: 'POST',
          url:'https://argyle-api-dev.herokuapp.com/v1/users/addcharge',
          data: venueData,
          contentType: 'application/json',
               })
-        .then((data)=>{
-          
-          console.log('Charge de la API',data)
-          setCharge(prevState => {
-          return { ...prevState, ...data.charge }
-        })
-
-        })
-        .catch(err => console.log(err.response))
-          console.log('Respuesta del cargo', charge)
-       axios({
+      
+      
+      const payMethod = await axios({
          method: 'POST',
          url:'https://argyle-api-dev.herokuapp.com/v1/payment/addPaymentMethod/card/credit',
          data: sendData,
          contentType: 'application/json',
               })
-        .then((response)=>{
-          console.log('Payment Method',response)
-        })
-        .catch(err => console.log(err.response))
         
-        let payData={
-          id: '',
+
+
+
+        
+        let payData = {
+          id: payMethod.data.data.paymentMethod.id,
           fullname: form.accountName,
           totalAmount:cart.reduce((acc, current, i) => acc + current.amount, 0),
+          charge: addCharge.data.data.charge.id,
+          userId:data.data.user.id,
+          paymentMethodType: "credit",
+          venueId: "5d57066a1d93b90017eebf63"}
+
+          console.log('Este es payData', payData)
+
+          
+          
+          axios({
+           method: 'POST',
+           url:'https://argyle-api-dev.herokuapp.com/v1/transactions/pay/argyle',
+           data: payData,
+           contentType: 'application/json',
+                })
+          .then(({response})=>{
+            Swal.fire('Success', 'Your payment was successful ', 'success')
+            console.log('Aquí significa que está bien',response)
+          })
+          .catch(err => console.log(err.response))
         }
-        axios({
+
+
+
+        catch{
+          const singUp = await  axios({
          method: 'POST',
-         url:'https://argyle-api-dev.herokuapp.com/v1/transactions/pay/argyle',
-         data: payData,
+         url:'https://argyle-api-dev.herokuapp.com/v1/auth/signup',
+         data: signData,
          contentType: 'application/json',
               })
-        .then(({response})=>{
-          console.log('Aquí significa que está bien',response)
-        })
-        .catch(err => console.log(err.response))
+          console.log(singUp.data.user)
+          
+        }
 
-      //Cierre then login  
-      })
-
-    .catch((err, signData)=> 
+       
       
-      console.log(err)
+        
 
-    )
   }
 
 
@@ -180,14 +187,6 @@ function Payment(props) {
       <br/>
       <br/>
       <br />
-
-
-
-
-
-
-
-
 
       <Container>
             <Row>

@@ -10,10 +10,10 @@ import {
 import FooterL from "./Footer";
 import NavbarTopSolid from "./NavbarSolid";
 
-import menu1 from '../../assets/img/pf1.webp'
-import menu2 from '../../assets/img/pf2.webp'
-import menu3 from '../../assets/img/pf3.webp'
-import menu4 from '../../assets/img/pf4.webp'
+import menu1 from '../../assets/img/pf1.png'
+import menu2 from '../../assets/img/pf2.png'
+import menu3 from '../../assets/img/pf3.png'
+import menu4 from '../../assets/img/pf4.png'
 
 
 function MenuIdeas(props) {
@@ -322,7 +322,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf1.webp")}
+                  src={require("../../assets/img/pf1.png")}
                 />
               </Col>
               <Col md="4">
@@ -330,7 +330,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf2.webp")}
+                  src={require("../../assets/img/pf2.png")}
                 />
               </Col>
               <Col md="4">
@@ -338,7 +338,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf3.webp")}
+                  src={require("../../assets/img/pf3.png")}
                 />
               </Col>
               <Col md="4">
@@ -346,7 +346,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf4.webp")}
+                  src={require("../../assets/img/pf4.png")}
                 />
               </Col>
               <Col md="4">
@@ -354,7 +354,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf5.webp")}
+                  src={require("../../assets/img/pf5.png")}
                 />
               </Col>
               <Col md="4">
@@ -362,7 +362,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf6.webp")}
+                  src={require("../../assets/img/pf1.png")}
                 />
               </Col>
             </Row>

@@ -19,10 +19,10 @@ import LandingPageHeader from './LandingPageHeader';
 import NavbarTop from './Navbar';
 import FooterL from './Footer';
 import SectionCarousel from './CarouselLanding';
-import menu1 from '../../assets/img/pf1.webp'
-import menu2 from '../../assets/img/pf2.webp'
-import menu3 from '../../assets/img/pf3.webp'
-import menu4 from '../../assets/img/pf4.webp'
+import menu1 from '../../assets/img/pf1.png'
+import menu2 from '../../assets/img/pf2.png'
+import menu3 from '../../assets/img/pf3.png'
+import menu4 from '../../assets/img/pf4.png'
 
 
 

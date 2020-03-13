@@ -7,14 +7,14 @@ import { Button, Container } from "reactstrap";
 
 function LandingPageHeader() {
   let pageHeader = React.createRef();
-
+  
   
 
   return (
     <>
       <div
         style={{
-          backgroundImage: "url(" + require('../../assets/img/pf1.webp') + ")"
+          backgroundImage: "url(" + require('../../assets/img/pf1.png') + ")"
         }}
         className="page-header"
         data-parallax={true}
