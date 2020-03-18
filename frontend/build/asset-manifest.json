@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6962f27d.chunk.css",
+    "main.js": "/static/js/main.477b45ba.chunk.js",
+    "main.js.map": "/static/js/main.477b45ba.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6b303a61.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6b303a61.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.c8111e31.chunk.js": "/static/js/2.c8111e31.chunk.js",
+    "static/js/2.c8111e31.chunk.js.map": "/static/js/2.c8111e31.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.be83486362beb24acb40c9de9f464178.js": "/precache-manifest.be83486362beb24acb40c9de9f464178.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.17e5ed98.chunk.css.map": "/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.6962f27d.chunk.css.map": "/static/css/main.6962f27d.chunk.css.map",
+    "static/media/ayo-ogunseinde-2.jpg": "/static/media/ayo-ogunseinde-2.bfc688ca.jpg",
+    "static/media/clem-onojeghuo-3.jpg": "/static/media/clem-onojeghuo-3.ae11d928.jpg",
+    "static/media/erik-lucatero-2.jpg": "/static/media/erik-lucatero-2.2051e0e8.jpg",
+    "static/media/joe-gardner-2.jpg": "/static/media/joe-gardner-2.76ff47ae.jpg",
+    "static/media/paper-kit.scss": "/static/media/nucleo-icons.f32ed5ad.eot",
+    "static/media/pf1.png": "/static/media/pf1.9ce134f8.png",
+    "static/media/pf2.png": "/static/media/pf2.da361917.png",
+    "static/media/pf3.png": "/static/media/pf3.929771d3.png",
+    "static/media/pf4.png": "/static/media/pf4.4095dd63.png",
+    "static/media/pf5.png": "/static/media/pf5.a62a4d7d.png",
+    "static/media/pflogo.png": "/static/media/pflogo.2a63205e.png"
+  }
+}
