@@ -260,8 +260,6 @@ function Home(props) {
                       <li>Lorem</li>
                       <li>Lorem</li>
                       <li>Lorem</li>
-                      <li>Lorem</li>
-                      <li>Lorem</li>
                       </ul>
                       </Col>
                       <Col>
