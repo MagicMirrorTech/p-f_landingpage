@@ -19,10 +19,10 @@ import LandingPageHeader from './LandingPageHeader';
 import NavbarTop from './Navbar';
 import FooterL from './Footer';
 import SectionCarousel from './CarouselLanding';
-import menu1 from '../../assets/img/pf1.png'
-import menu2 from '../../assets/img/pf2.png'
-import menu3 from '../../assets/img/pf3.png'
-import menu4 from '../../assets/img/pf4.png'
+import menu1 from '../../assets/img/menus/southern.png'
+import menu2 from '../../assets/img/menus/hearty.png'
+import menu3 from '../../assets/img/menus/light-classy.png'
+import menu4 from '../../assets/img/menus/healthy.png'
 
 
 
@@ -59,20 +59,21 @@ function Home(props) {
               </Col>
 
               <Col className="mr-auto ml-auto" md="3" sm="6">
-                <h4 className="images-title text-center">HIGH POINT AR</h4>
+                <h4 className="images-title text-center">HIGH POINT ARTS</h4>
                 <img
+                  height="110px"
                   alt="..."
                   className="img-rounded  img-responsive"
-                  src={require("../../assets/img/gtcc.png")}
+                  src={require("../../assets/img/partners/High-Point-Arts.png")}
                 />
               </Col>
               <Col className="mr-auto ml-auto" md="3" sm="6">
-                <h4 className="images-title text-center">RALPH LAUREN</h4>
+                <h4 className="images-title text-center">HIGH POINT MARKET</h4>
                 <img
-                  height="137.94px"
+                  height="110px"
                   alt="..."
                   className="img-rounded  img-responsive"
-                  src={require("../../assets/img/ralphlauren.png")}
+                  src={require("../../assets/img/partners/HP-maket.png")}
                 />
               </Col>
             </Row>
@@ -92,24 +93,24 @@ function Home(props) {
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
+                        height="120px"
+                        width="120px"
                         alt="..."
-                        src={require("../../assets/img/faces/clem-onojeghuo-3.jpg")}
+                        src={require("../../assets/img/clients/client1.png")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Henry Ford</CardTitle>
-                        <h6 className="card-category">
-                          GTCC | Product Manager
-                        </h6>
+                        <CardTitle tag="h4">Tim and Missy Bentley</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      Teamwork is so important that it is virtually impossible
-                      for you to reach the heights of your capabilities or make
-                      the money that you want without becoming very good at it.
+                    "Y'all were incredible! Everyone at last night's wedding for Tiffany and Devon at the
+                    Castle repeatedly commented on how great the food was! I want to brag on the whole
+                    catering team, the chefs and set up crew! EXCELLENT! Y'all went above and beyond
+                    and were so accommodating. Thank you!"
                     </p>
                   </CardBody>
                 </Card>
@@ -120,24 +121,19 @@ function Home(props) {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("../../assets/img/faces/joe-gardner-2.jpg")}
+                        src={require("../../assets/img/clients/client2.jpg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Sophie West</CardTitle>
-                        <h6 className="card-category">
-                          Ralph Lauren | Designer
-                        </h6>
+                        <CardTitle tag="h4">Kim Lineberry</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      A group becomes a team when each member is sure enough of
-                      himself and his contribution to praise the skill of the
-                      others. No one can whistle a symphony. It takes an
-                      orchestra to play it.
+                    “Plain and Fancy catered our wedding and brunch the following morning. First let me
+                    say, they are AMAZING to work with, responsive, attentive, and accommodating…”
                     </p>
                   </CardBody>
                 </Card>
@@ -148,24 +144,20 @@ function Home(props) {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         alt="..."
-                        src={require("../../assets/img/faces/erik-lucatero-2.jpg")}
+                        src={require("../../assets/img/clients/client3.jpg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Robert Orben</CardTitle>
-                        <h6 className="card-category">
-                          Magic Mirror | Developer
-                        </h6>
+                        <CardTitle tag="h4">Vicki Pearson</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                      The strength of the team is each individual member. The
-                      strength of each member is the team. If you can laugh
-                      together, you can work together, silence isn’t golden,
-                      it’s deadly.
+                    “Everything was wonderful - the food, the service, the presentation! I cannot adequately
+                    express how pleased we were with our total experience with Plain and Fancy Caterers.
+                    They created the wedding of my daughter's dreams and kept it within our budget.”
                     </p>
                   </CardBody>
                 </Card>

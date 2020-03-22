@@ -16,27 +16,27 @@ import {
 
 const items = [
   {
-    src: require("../../assets/img/pf1.png"),
+    src: require("../../assets/img/events/Corporate.png"),
     altText: "Corporate",
     caption: "Corporate"
   },
   {
-    src: require("../../assets/img/pf2.png"),
+    src: require("../../assets/img/events/wedding.png"),
     altText: "Weddings",
     caption: "Weddings"
   },
   {
-    src: require("../../assets/img/pf3.png"),
+    src: require("../../assets/img/events/market.png"),
     altText: "Spring & Fall Markets",
     caption: "Spring & Fall Markets"
   },
   {
-    src: require("../../assets/img/pf4.png"),
+    src: require("../../assets/img/events/VIP.png"),
     altText: "Vip Private Parties",
     caption: "Vip Private Parties"
   },
   {
-    src: require("../../assets/img/pf5.png"),
+    src: require("../../assets/img/events/drop-off.png"),
     altText: "Drop Off's",
     caption: "Drop Off's"
   }

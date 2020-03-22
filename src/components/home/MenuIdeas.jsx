@@ -10,10 +10,10 @@ import {
 import FooterL from "./Footer";
 import NavbarTopSolid from "./NavbarSolid";
 
-import menu1 from '../../assets/img/pf1.png'
-import menu2 from '../../assets/img/pf2.png'
-import menu3 from '../../assets/img/pf3.png'
-import menu4 from '../../assets/img/pf4.png'
+import menu1 from '../../assets/img/menus/southern.png'
+import menu2 from '../../assets/img/menus/hearty.png'
+import menu3 from '../../assets/img/menus/light-classy.png'
+import menu4 from '../../assets/img/menus/healthy.png'
 
 
 function MenuIdeas(props) {
@@ -302,8 +302,6 @@ function MenuIdeas(props) {
             <div className="title text-center">
               <h3>Gallery</h3>
             </div>
-            <h4 className="title">Corporate</h4>
-            <br />
             <Row>
               <Col md="4">
                 <img
@@ -347,10 +345,59 @@ function MenuIdeas(props) {
               </Col>
               <Col md="4">
                 <img
-                  style={{ marginBottom: "30px" }}
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px"}}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/pf1.png")}
+                  src={require("../../assets/img/gallery/1.jpg")}
+                />
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/3.jpg")}
+                />
+                
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/4.jpg")}
+                />
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/5.jpg")}
+                />
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/6.jpg")}
+                />
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/7.jpg")}
+                />
+              </Col>
+              <Col md="4">
+                <img
+                  style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
+                  alt="..."
+                  className="img-rounded img-responsive"
+                  src={require("../../assets/img/gallery/8.jpg")}
                 />
               </Col>
             </Row>
