@@ -74,6 +74,7 @@ function Connect(props) {
                   color="facebook-bg"
                   href="https://www.piliapp.com/lnk/facebook/page/275474845934606"
                   id="tooltip68961360"
+                  target="_blank"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
