@@ -41,10 +41,6 @@ function FooterL() {
             <span className="lead mb-0">
               Argyle Admin
             </span>
-            <br/>
-            <span className="lead mb-0">
-              Web Portal
-            </span>
           </div>
 
           <div className="col-lg-4 mb-5 mb-lg-0">
