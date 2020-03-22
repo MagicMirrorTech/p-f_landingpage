@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'react-router-dom'
 
 // reactstrap components
 import { Row, Container } from "reactstrap";
@@ -14,9 +13,9 @@ function FooterL() {
             Connect
             </h4>
             <span className="lead mb-0">
-              <Link to="https://www.facebook.com/triadspecialevents">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/triadspecialevents" >
               Facebook
-              </Link>
+              </a>
             </span>
             <br/>
             <span className="lead mb-0">
@@ -44,22 +43,16 @@ function FooterL() {
               Navigate
             </h4>
             <span className="lead mb-0">  
-            <Link to="http://payment.roverpayapp.com/login?merchantid=pnf">
+            <a target="_blank" rel="noopener noreferrer" href="http://payment.roverpayapp.com/login?merchantid=pnf">
               Pay Invoice
-            </Link>
+            </a>
             </span>
             <br/>
             <span className="lead mb-0">
-            <Link to="http://manager.roverpayapp.com">
+            <a target="_blank" rel="noopener noreferrer" href="http://manager.roverpayapp.com">
               Argyle Admin
-            </Link>
+            </a>
               
-            </span>
-            <br/>
-            <span className="lead mb-0">
-            <Link to="">
-              Web Portal
-            </Link>
             </span>
           </div>
 
@@ -69,7 +62,7 @@ function FooterL() {
             </h4>
             <p className="lead mb-0">
               © {new Date().getFullYear()}, Plain & Fancy Caterers{" "}
-              Created by <a href="https://www.magicmirror.dev">M|M Devs</a>
+              Created by <a target="_blank" rel="noopener noreferrer" href="https://www.magicmirror.dev">M|M Devs</a>
             </p>
           </div>
           
