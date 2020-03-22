@@ -62,7 +62,7 @@ function NavbarTop() {
             title="Plain & Fancy Caterers"
             tag={Link}
           >
-            <img height="80px" src={logo} alt="P&F Logo" />
+            <img height="70px" src={logo} alt="P&F Logo" />
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
