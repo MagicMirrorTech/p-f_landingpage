@@ -129,7 +129,7 @@ function AboutUs(props) {
                         className="btn-round"
                         outline
                         color="neutral"
-                        href="/"
+                        href="https://www.gtcc.edu/about"
                         size="lg"
                         target="_blank"
                       >
@@ -172,7 +172,7 @@ function AboutUs(props) {
                         className="btn-round"
                         outline
                         color="neutral"
-                        href="/"
+                        href="http://www.highpointarts.org"
                         size="lg"
                         target="_blank"
                       >
@@ -214,7 +214,7 @@ function AboutUs(props) {
                         className="btn-round"
                         outline
                         color="neutral"
-                        href="/"
+                        href="https://www.highpointmarket.org/products-and-trends"
                         size="lg"
                         target="_blank"
                       >

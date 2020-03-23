@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 import {
   Button,
   Card,
@@ -28,6 +29,8 @@ import menu4 from '../../assets/img/menus/healthy.png'
 
 
 function Home(props) {
+  const [mail, setMail] = useState({})
+
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("profile-page");
@@ -35,6 +38,27 @@ function Home(props) {
       document.body.classList.remove("profile-page");
     };
   });
+
+  const handleInput = e => {
+    e.persist()
+    setMail(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    axios.post('https://pflanding.herokuapp.com/contact', mail)
+    .then(({ data }) => {
+      Swal.fire('Very Good', 'Message sent, shortly our staff will contact you', 'success')
+      document.getElementById("miForm").reset();
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  }
 
   return (
     <>
@@ -428,7 +452,7 @@ function Home(props) {
             <Row>
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="text-center">Contact Us</h2>
-                <Form className="contact-form">
+                <Form  id="miForm" className="contact-form" onSubmit={handleSubmit}>
                   <Row>
                     <Col md="6">
                       <label>Name</label>
@@ -438,7 +462,7 @@ function Home(props) {
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" type="text" />
+                        <Input placeholder="Name" name="name" onChange={handleInput} type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -449,7 +473,7 @@ function Home(props) {
                             <i className="nc-icon nc-email-85" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Email" type="text" />
+                        <Input placeholder="Email" name="email" onChange={handleInput}  type="email" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -460,7 +484,7 @@ function Home(props) {
                             <i className="nc-icon nc-mobile" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Phone Number" type="number" />
+                        <Input placeholder="Phone Number" name="phone" onChange={handleInput} type="number" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -474,6 +498,8 @@ function Home(props) {
                         <Input
                           placeholder="Alternate Phone Number"
                           type="number"
+                          onChange={handleInput}
+                          name="phone2"
                         />
                       </InputGroup>
                     </Col>
@@ -485,7 +511,7 @@ function Home(props) {
                             <i className="nc-icon nc-send" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Subject" type="text" />
+                        <Input placeholder="Subject" name="subject" onChange={handleInput}  type="text" />
                       </InputGroup>
                     </Col>
                   </Row>
@@ -494,6 +520,8 @@ function Home(props) {
                     placeholder="Tell us your thoughts and feelings..."
                     type="textarea"
                     rows="4"
+                    onChange={handleInput}
+                    name="message"
                   />
                   <Row>
                     <Col className="ml-auto mr-auto" md="4">

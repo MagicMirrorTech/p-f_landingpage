@@ -1,5 +1,6 @@
-import React from 'react'
-import ReactDatetime from "react-datetime";
+import React, {useState} from 'react'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 import {
   Button,
@@ -22,6 +23,8 @@ import NavbarTopSolid from './NavbarSolid';
 
 
 function RequestQuote(props) {
+  const [mail, setMail] = useState({})
+
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     document.body.classList.add("profile-page");
@@ -29,6 +32,29 @@ function RequestQuote(props) {
       document.body.classList.remove("profile-page");
     };
   });
+
+  const handleInput = e => {
+    e.persist()
+    setMail(prevState => ({
+      ...prevState,
+      [e.target.name]: e.target.value
+    }))
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    axios.post('https://pflanding.herokuapp.com/requestquote', mail)
+    .then(({ data }) => {
+      Swal.fire('Very Good', 'Request Quote sent, shortly our staff will contact you', 'success')
+      document.getElementById("miForm").reset();
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    
+  }
+
+
 
   return (
     <>
@@ -44,7 +70,7 @@ function RequestQuote(props) {
             <Row>
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="text-center">Request a Quote</h2>
-                <Form className="contact-form">
+                <Form id="miForm" className="contact-form" onSubmit={handleSubmit}>
                   <Row>
                     <Col md="12">
                       <label>Event Type</label>
@@ -54,7 +80,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-bullet-list-67" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" type="select">
+                        <Input name="event" onChange={handleInput} type="select">
                           <option defaultValue="disabled">Select one</option>
                           <option>Corporate</option>
                           <option>Wedding</option>
@@ -71,7 +97,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" type="text" />
+                        <Input placeholder="Name" name="name" onChange={handleInput} type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -83,11 +109,7 @@ function RequestQuote(props) {
                               <i className="nc-icon nc-watch-time" />
                             </InputGroupText>
                           </InputGroupAddon>
-                          <ReactDatetime
-                            inputProps={{
-                              placeholder: "Datetime Picker Here"
-                            }}
-                          />
+                          <Input placeholder="Email" name="date" type="date" onChange={handleInput} />
                         </InputGroup>
                       </FormGroup>
                     </Col>
@@ -99,7 +121,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-email-85" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Email" type="text" />
+                        <Input placeholder="Email" name="email" onChange={handleInput} type="email" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -110,7 +132,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-mobile" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Phone Number" type="number" />
+                        <Input placeholder="Phone Number" onChange={handleInput} name="phone" type="number" />
                       </InputGroup>
                     </Col>
                     <Col md="12">
@@ -121,7 +143,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-map-big" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Address of event" type="text" />
+                        <Input placeholder="Address of event" onChange={handleInput} name="address" type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -132,7 +154,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-bullet-list-67" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" type="select">
+                        <Input placeholder="Name" onChange={handleInput} name="budget" type="select">
                           <option defaultValue="disabled">Select one</option>
                           <option>500 - 2,000</option>
                           <option>2,001 - 5,000</option>
@@ -150,7 +172,7 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Guests of event" type="text" />
+                        <Input placeholder="Guests of event" onChange={handleInput} name="guest" type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -159,6 +181,8 @@ function RequestQuote(props) {
                         placeholder="Tell us your thoughts and feelings..."
                         type="textarea"
                         rows="4"
+                        onChange={handleInput}
+                        name="menu"
                         
                       />
                     </Col>
@@ -168,6 +192,8 @@ function RequestQuote(props) {
                         placeholder="Tell us your thoughts and feelings..."
                         type="textarea"
                         rows="4"
+                        onChange={handleInput}
+                        name="thoughts"
                       />
                     </Col>
                   </Row>
