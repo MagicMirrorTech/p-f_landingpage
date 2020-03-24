@@ -20,21 +20,24 @@ function FooterL() {
             <br/>
             <span className="lead mb-0">
               Phone
-              <p>
+              <p><a href="tel:+13368694842">
               (336)869-4842
-              </p>
+              </a></p>
+              
             </span>
             <span className="lead mb-0">
               Email
             <p>
+            <a href="mailto:solutions@plainandfancycaterers.com">
             solutions@plainandfancycaterers.com
+            </a>
             </p>
             </span>
             <span className="lead mb-0">
               Address 
             </span>
             <p>
-             3021 N Main St #102, High Point, NC 27265
+             <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/HLUj6x7dpngVoTvR7">3021 N Main St #102, High Point, NC 27265</a>
             </p>
             <br/>
           </div>

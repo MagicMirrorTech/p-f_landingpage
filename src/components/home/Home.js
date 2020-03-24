@@ -51,11 +51,11 @@ function Home(props) {
     e.preventDefault()
     axios.post('https://pflanding.herokuapp.com/contact', mail)
     .then(({ data }) => {
-      Swal.fire('Very Good', 'Message sent, shortly our staff will contact you', 'success')
+      Swal.fire('Message Sent', 'Thank you for contacting us, our team will be contacting you shortly.', 'success')
       document.getElementById("miForm").reset();
     })
     .catch(err => {
-      console.log(err)
+      console.log(err.response)
     })
     
   }
@@ -63,7 +63,6 @@ function Home(props) {
   return (
     <>
       <NavbarTop />
-      <div id="landingHome"></div>
       <LandingPageHeader/>
       <br />
       <div className="main">
@@ -98,6 +97,16 @@ function Home(props) {
                   alt="..."
                   className="img-rounded  img-responsive"
                   src={require("../../assets/img/partners/HP-maket.png")}
+                />
+              </Col>
+              <Col className="mr-auto ml-auto" md="3" sm="6">
+                <h4 style={{fontSize:"16px"}} className="images-title text-center">HIGH POINT CONVENTION AND BUSINESS BUREAU</h4>
+                <img
+                  width="255px"
+                  height="138px"
+                  alt="..."
+                  className="img-rounded  img-responsive"
+                  src={require("../../assets/img/partners/hpconvention.jpg")}
                 />
               </Col>
             </Row>

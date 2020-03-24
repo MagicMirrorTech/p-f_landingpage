@@ -42,12 +42,12 @@ function Connect(props) {
     e.preventDefault()
     axios.post('https://pflanding.herokuapp.com/contact', mail)
     .then(({ data }) => {
-      Swal.fire('Very Good', 'Message sent, shortly our staff will contact you', 'success')
+      Swal.fire('Message Sent', 'Thank you for contacting us, our team will be contacting you shortly', 'success')
       document.getElementById("miForm").reset();
 
     })
     .catch(err => {
-      console.log(err)
+      console.log(err.response)
     })
     
   }

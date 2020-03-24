@@ -82,7 +82,7 @@ function AboutUs(props) {
                   <CardImg width="100%" src={card3} alt="Leadership 1" />
                   <CardImgOverlay>
                     <CardText style={{ marginTop: "270px" }}>
-                      <h3 style={{ color: "white" }}>James, Chef</h3>
+                      <h3 style={{ color: "white" }}>Kathy, Office Manager</h3>
                     </CardText>
                   </CardImgOverlay>
                 </Card>
@@ -95,7 +95,7 @@ function AboutUs(props) {
           <Container>
             <h2 className="title">Corporate Partners</h2>
             <Row>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -106,7 +106,7 @@ function AboutUs(props) {
                       />
                     </a>
                   </div>
-                  <CardBody>
+                  <CardBody style={{marginBottom:"130px"}}>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h4">GTCC</CardTitle>
@@ -118,10 +118,6 @@ function AboutUs(props) {
                       Culinary and Hospitality Management to Computer Technology
                       to Health Science programs.
                     </p>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
                   </CardBody>
                   <CardFooter className="text-center">
                     <div className="col text-center">
@@ -139,7 +135,7 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -150,7 +146,7 @@ function AboutUs(props) {
                       />
                     </a>
                   </div>
-                  <CardBody>
+                  <CardBody style={{marginBottom:"65px"}}>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h4">HIGH POINT ARTS</CardTitle>
@@ -163,8 +159,6 @@ function AboutUs(props) {
                     and artistic activities and encouraging full community participation in 
                     them.
                     </p>
-                    <br/>
-                    <br />
                   </CardBody>
                   <CardFooter className="text-center">
                     <div className="col text-center">
@@ -182,7 +176,7 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -215,6 +209,48 @@ function AboutUs(props) {
                         outline
                         color="neutral"
                         href="https://www.highpointmarket.org/products-and-trends"
+                        size="lg"
+                        target="_blank"
+                      >
+                        Visit website
+                      </Button>
+                    </div>
+                  </CardFooter>
+                </Card>
+              </Col>
+              <Col md="3">
+                <Card className="card-profile card-plain">
+                  <div className="card-avatar">
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <img
+                        height="100px"
+                        style={{ height: "120px" }}
+                        alt="gtcc logo"
+                        src={require("../../assets/img/partners/hpconvention.jpg")}
+                      />
+                    </a>
+                  </div>
+                  <CardBody style={{marginBottom:"50px"}}>
+                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                      <div className="author">
+                        <CardTitle style={{fontSize:"18px"}} tag="h4">HIGH POINT CONVENTION AND BUSINESS BUREAU</CardTitle>
+                      </div>
+                    </a>
+                    <p className="card-description text-center">
+                    The mission of the High Point Convention & Visitors Bureau
+                    is to promote and encourage economic development in High Point 
+                    through travel and tourism. Travelers to the region and Triad 
+                    residents alike can experience a venue like no other at the High 
+                    Point Convention and Visitors Bureau’s Regional Visitors Center.
+                    </p>
+                  </CardBody>
+                  <CardFooter className="text-center">
+                    <div className="col text-center">
+                      <Button
+                        className="btn-round"
+                        outline
+                        color="neutral"
+                        href="https://www.highpoint.org/"
                         size="lg"
                         target="_blank"
                       >

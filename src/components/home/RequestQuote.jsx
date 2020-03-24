@@ -49,7 +49,7 @@ function RequestQuote(props) {
       document.getElementById("miForm").reset();
     })
     .catch(err => {
-      console.log(err)
+      console.log(err.response)
     })
     
   }
@@ -165,20 +165,20 @@ function RequestQuote(props) {
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label htmlFor="Guests">Guests</label>
+                      <label htmlFor="Guests">Guest Count</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Guests of event" onChange={handleInput} name="guest" type="text" />
+                        <Input placeholder="Estimate Number of Guests" onChange={handleInput} name="guest" type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
                       <label>Menu Ideas</label>
                       <Input
-                        placeholder="Tell us your thoughts and feelings..."
+                        placeholder="Share your menu ideas & dietary requests"
                         type="textarea"
                         rows="4"
                         onChange={handleInput}
@@ -189,7 +189,7 @@ function RequestQuote(props) {
                     <Col md="6">
                       <label>Additional Thoughts</label>
                       <Input
-                        placeholder="Tell us your thoughts and feelings..."
+                        placeholder="Share your thoughts and preferences here"
                         type="textarea"
                         rows="4"
                         onChange={handleInput}

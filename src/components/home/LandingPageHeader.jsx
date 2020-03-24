@@ -24,7 +24,7 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>FOR THE LOVE OF FOOD</h1>
+            <h1 style={{fontSize:"70px"}}>FOR THE LOVE OF FOOD</h1>
             <br />
             <Button
               href="/request-quote"
