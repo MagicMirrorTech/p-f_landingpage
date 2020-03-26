@@ -8,16 +8,16 @@ import {
   Row,
   Col,
   CardImg,
-  CardText,
-  CardImgOverlay,
   CardBody,
   CardFooter,
-  CardTitle
+  CardTitle,
 } from "reactstrap";
 
-import card1 from '../../assets/img/faces/erik-lucatero-2.jpg'
-import card2 from "../../assets/img/faces/joe-gardner-2.jpg";
-import card3 from "../../assets/img/faces/clem-onojeghuo-3.jpg";
+import card0 from '../../assets/img/leadership/p&f-marc.png'
+import card1 from '../../assets/img/leadership/IMG_7742.png'
+import card2 from '../../assets/img/leadership/p&f-kathy.png'
+import card3 from '../../assets/img/leadership/p&f-lisa.png'
+
 
 
 import card4 from "../../assets/img/wedding/danielle-sang.jpg"
@@ -55,38 +55,43 @@ function AboutUs(props) {
           <Container>
             <h2 className="title">Leadership</h2>
             <Row>
-              <Col md="4">
+              <Col md="3">
                 <Card inverse>
-                  <CardImg width="100%" src={card1} alt="Leadership 1" />
-                  <CardImgOverlay>
-                    <CardText style={{ marginTop: "270px" }}>
-                      <h3 style={{ color: "white" }}>Marc, Executive Chef</h3>
-                    </CardText>
-                  </CardImgOverlay>
+                  <CardImg width="100%" src={card0} alt="Leadership 1" />
+                    <CardFooter>
+                      <b style={{ color: "black", fontSize:"20px" }}>Marc, General Manager/Co-Owner</b>
+                    </CardFooter>
                 </Card>
               </Col>
-              <Col md="4">
-                <Card inverse>
-                  <CardImg width="100%" src={card2} alt="Leadership 1" />
-                  <CardImgOverlay>
-                    <CardText style={{ marginTop: "250px" }}>
-                      <h3 style={{ color: "white" }}>
-                        Lisa, Head of Operations
-                      </h3>
-                    </CardText>
-                  </CardImgOverlay>
+              <Col md="3">
+                <Card  inverse>
+                  <CardImg width="100%" src={card1} alt="Leadership 2" />
+                  <CardFooter className="text-center">
+                  <b style={{ color: "black", fontSize:"20px" }}>Spencer Wright, Executive Chef</b>
+
+                  </CardFooter>
+
                 </Card>
               </Col>
-              <Col md="4">
+              <Col md="3">
                 <Card inverse>
-                  <CardImg width="100%" src={card3} alt="Leadership 1" />
-                  <CardImgOverlay>
-                    <CardText style={{ marginTop: "270px" }}>
-                      <h3 style={{ color: "white" }}>Kathy, Office Manager</h3>
-                    </CardText>
-                  </CardImgOverlay>
+                  <CardImg width="100%" src={card2} alt="Leadership 3" />
+                  <CardFooter className="text-center">
+                  <b style={{ color: "black", fontSize:"20px" }}>Kathy White, Office Manager</b>
+                  </CardFooter>
                 </Card>
               </Col>
+              <Col md="3">
+                <Card inverse>
+                  <CardImg width="100%" src={card3} alt="Leadership 4" />
+                  <CardFooter>
+                      <b style={{ color: "black", fontSize:"20px" }}>
+                      Lisa, Operations Manager/Co-Owner
+                      </b>
+                </CardFooter>
+                </Card>
+              </Col>
+              
             </Row>
           </Container>
         </div>
@@ -140,7 +145,8 @@ function AboutUs(props) {
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
-                        style={{ height: "120px" }}
+
+                        style={{ height: "120px", backgroundColor:"white" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/partners/High-Point-Arts.png")}
                       />
@@ -182,7 +188,7 @@ function AboutUs(props) {
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img
                         height="100px"
-                        style={{ height: "120px" }}
+                        style={{ height: "120px", backgroundColor:"white" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/partners/HP-maket.png")}
                       />

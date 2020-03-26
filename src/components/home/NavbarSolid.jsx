@@ -41,7 +41,7 @@ function NavbarTopSolid() {
             title="Plain & Fancy Caterers"
             tag={Link}
           >
-            <img height="80px" src={logo} alt="P&F Logo" />
+            <img height="85px" src={logo} alt="P&F Logo" />
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -62,37 +62,37 @@ function NavbarTopSolid() {
         >
           <Nav navbar>
             <NavItem>
-              <NavLink exact to="/" activeClassName="active" tag={RRNav}>
+              <NavLink exact to="/" style={{fontSize:"16px"}} activeClassName="active" tag={RRNav}>
                 Home
               </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/request-quote" tag={Link}>
+              <NavLink to="/request-quote" style={{fontSize:"16px"}} tag={Link}>
                 Request Quote
               </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/about" tag={Link}>
+              <NavLink to="/about" style={{fontSize:"16px"}} tag={Link}>
                 About Us
               </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/menu-ideas" tag={Link}>
+              <NavLink to="/menu-ideas" style={{fontSize:"16px"}} tag={Link}>
                 Menu Ideas
               </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/connect" tag={Link}>
+              <NavLink to="/connect" style={{fontSize:"16px"}} tag={Link}>
                 Connect
               </NavLink>
             </NavItem>
 
             <NavItem>
-              <NavLink to="/pay-invoice" tag={Link}>
+              <NavLink to="/pay-invoice" style={{fontSize:"16px"}} tag={Link}>
                 Pay Bill
               </NavLink>
             </NavItem>
