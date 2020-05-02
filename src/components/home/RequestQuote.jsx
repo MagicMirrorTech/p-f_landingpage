@@ -46,7 +46,7 @@ function RequestQuote(props) {
     if(!mail.event){
       alert('Please select event type')
     }
-    else if(!mail.budget){
+    else if(!mail.budget || mail.budget === 'Select one'){
       alert('Please select food budget')
     }
     else{
@@ -167,7 +167,7 @@ function RequestQuote(props) {
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input placeholder="Name" onChange={handleInput} name="budget" type="select">
-                          <option defaultValue="disabled">Select one</option>
+                          <option>Select one</option>
                           <option>500 - 2,000</option>
                           <option>2,001 - 5,000</option>
                           <option>5,001 - 10,000</option>
