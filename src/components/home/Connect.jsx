@@ -17,6 +17,7 @@ import {
 
 import FooterL from "./Footer";
 import NavbarTopSolid from "./NavbarSolid";
+import Global from "../../Global";
 
 
 function Connect(props) {
@@ -40,11 +41,11 @@ function Connect(props) {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    axios.post('https://pflanding.herokuapp.com/contact', mail)
+    axios.post(Global.url+'contact', mail)
     .then(({ data }) => {
       Swal.fire('Message Sent', 'Thank you for contacting us, our team will be contacting you shortly', 'success')
       document.getElementById("miForm").reset();
-
+      console.log('email',data)
     })
     .catch(err => {
       console.log(err.response)
@@ -55,6 +56,8 @@ function Connect(props) {
   return (
     <>
       <NavbarTopSolid/>
+      
+      <div className="main">
       <br/>
       <br/>
       <br/>
@@ -62,7 +65,6 @@ function Connect(props) {
       <br/>
       <br/>
       <br />
-      <div className="main">
         <div id="images">
           <Container>
             <Row>
@@ -143,7 +145,7 @@ function Connect(props) {
           </Container>
         </div>
 
-        <div className="section landing-section" style={{ paddingTop: "30px" }}>
+        <div  style={{ paddingTop: "30px" }}>
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
@@ -151,25 +153,25 @@ function Connect(props) {
                 <Form id="miForm" className="contact-form" onSubmit={handleSubmit}>
                   <Row>
                     <Col md="6">
-                      <label>Name</label>
+                      <label>Name *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" name="name" onChange={handleInput} type="text" />
+                        <Input required placeholder="Name" name="name" onChange={handleInput} type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label>Email</label>
+                      <label>Email *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-email-85" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Email" name="email" onChange={handleInput}  type="email" />
+                        <Input required placeholder="Email" name="email" onChange={handleInput}  type="email" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -200,24 +202,25 @@ function Connect(props) {
                       </InputGroup>
                     </Col>
                     <Col md="12">
-                      <label>Subject</label>
+                      <label>Subject *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-send" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Subject" name="subject" onChange={handleInput}  type="text" />
+                        <Input required placeholder="Subject" name="subject" onChange={handleInput}  type="text" />
                       </InputGroup>
                     </Col>
                   </Row>
-                  <label>Message</label>
+                  <label>Message *</label>
                   <Input
                     placeholder="Tell us your thoughts and feelings..."
                     type="textarea"
                     rows="4"
                     onChange={handleInput}
                     name="message"
+                    required
                   />
                   <Row>
                     <Col className="ml-auto mr-auto" md="4">
@@ -232,6 +235,7 @@ function Connect(props) {
           </Container>
         </div>
       </div>
+      <br/>
       <FooterL />
     </>
   );

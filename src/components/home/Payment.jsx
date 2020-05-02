@@ -97,7 +97,7 @@ function Payment(props) {
 
           let venueData ={
             active: true,
-            venue: "5d57066a1d93b90017eebf63",
+            venue: "5e72a8903a879b0017029ada",
             dateOfPayment: date,
             amount: cart.reduce((acc, current, i) => acc + current.amount, 0),
             chargesData: cart,
@@ -108,7 +108,7 @@ function Payment(props) {
         
       const addCharge = await  axios({
          method: 'POST',
-         url:'https://argyle-api-dev.herokuapp.com/v1/users/addcharge',
+         url:'https://api.roverpayapp.com/v1/users/addcharge',
          data: venueData,
          contentType: 'application/json',
               })
@@ -116,14 +116,10 @@ function Payment(props) {
       
       const payMethod = await axios({
          method: 'POST',
-         url:'https://argyle-api-dev.herokuapp.com/v1/payment/addPaymentMethod/card/credit',
+         url:'https://api.roverpayapp.com/v1/payment/addPaymentMethod/card/credit',
          data: sendData,
          contentType: 'application/json',
               })
-        
-
-
-
         
         let payData = {
           id: payMethod.data.data.paymentMethod.id,
@@ -132,41 +128,31 @@ function Payment(props) {
           charge: addCharge.data.data.charge.id,
           userId:data.data.user.id,
           paymentMethodType: "credit",
-          venueId: "5d57066a1d93b90017eebf63"}
-
-          console.log('Este es payData', payData)
-
+          venueId: "5e72a8903a879b0017029ada"}
           
           
           axios({
            method: 'POST',
-           url:'https://argyle-api-dev.herokuapp.com/v1/transactions/pay/argyle',
+           url:'https://api.roverpayapp.com/v1/transactions/pay/argyle',
            data: payData,
            contentType: 'application/json',
                 })
           .then(({response})=>{
             Swal.fire('Success', 'Your payment was successful ', 'success')
-            console.log('Aquí significa que está bien',response)
           })
           .catch(err => console.log(err.response))
         }
 
-
-
         catch{
           const singUp = await  axios({
          method: 'POST',
-         url:'https://argyle-api-dev.herokuapp.com/v1/auth/signup',
+         url:'https://api.roverpayapp.com/v1/auth/signup',
          data: signData,
          contentType: 'application/json',
               })
           console.log(singUp.data.user)
           
         }
-
-       
-      
-        
 
   }
 

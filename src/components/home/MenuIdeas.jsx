@@ -9,6 +9,7 @@ import {
 import FooterL from "./Footer";
 import NavbarTopSolid from "./NavbarSolid";
 import { Menus } from "./Menus";
+import Commitment from "./Commitment";
 
 
 function MenuIdeas(props) {
@@ -30,6 +31,7 @@ function MenuIdeas(props) {
       <br/>
       <br/>
       <br />
+      <Commitment/>
       <div className="main">
         <div className="text-center">
           <h3>NEED SOME IDEAS?</h3>
@@ -39,8 +41,6 @@ function MenuIdeas(props) {
         </div>
 
         <Menus/>
-
-        <br />
 
         <div
           id="images"
@@ -97,7 +97,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px"}}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/1.jpg")}
+                  src={require("../../assets/img/gallery/1.png")}
                 />
               </Col>
               <Col md="4">
@@ -105,7 +105,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/3.jpg")}
+                  src={require("../../assets/img/gallery/3.png")}
                 />
                 
               </Col>
@@ -114,7 +114,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/4.jpg")}
+                  src={require("../../assets/img/gallery/4.png")}
                 />
               </Col>
               <Col md="4">
@@ -122,7 +122,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/5.jpg")}
+                  src={require("../../assets/img/gallery/5.png")}
                 />
               </Col>
               <Col md="4">
@@ -130,7 +130,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/6.jpg")}
+                  src={require("../../assets/img/gallery/6.png")}
                 />
               </Col>
               <Col md="4">
@@ -138,7 +138,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/7.jpg")}
+                  src={require("../../assets/img/gallery/7.png")}
                 />
               </Col>
               <Col md="4">
@@ -146,7 +146,7 @@ function MenuIdeas(props) {
                   style={{ marginBottom: "30px", height: "262.5px", width:"350px" }}
                   alt="..."
                   className="img-rounded img-responsive"
-                  src={require("../../assets/img/gallery/8.jpg")}
+                  src={require("../../assets/img/gallery/8.png")}
                 />
               </Col>
             </Row>

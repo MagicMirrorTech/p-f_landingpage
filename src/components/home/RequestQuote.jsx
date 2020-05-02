@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-
+import Global from '../../Global'
 import {
   Button,
   
@@ -16,7 +16,6 @@ import {
   Col
 } from "reactstrap";
 
-
 import FooterL from './Footer';
 
 import NavbarTopSolid from './NavbarSolid';
@@ -24,6 +23,7 @@ import NavbarTopSolid from './NavbarSolid';
 
 function RequestQuote(props) {
   const [mail, setMail] = useState({})
+  
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -43,7 +43,14 @@ function RequestQuote(props) {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    axios.post('https://pflanding.herokuapp.com/requestquote', mail)
+    if(!mail.event){
+      alert('Please select event type')
+    }
+    else if(!mail.budget){
+      alert('Please select food budget')
+    }
+    else{
+    axios.post(Global.url+'requestquote', mail)
     .then(({ data }) => {
       Swal.fire('Very Good', 'Request Quote sent, shortly our staff will contact you', 'success')
       document.getElementById("miForm").reset();
@@ -51,29 +58,34 @@ function RequestQuote(props) {
     .catch(err => {
       console.log(err.response)
     })
-    
+    }
   }
-
 
 
   return (
     <>
       <NavbarTopSolid/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-
+      
+      
       <div className="main">
-        <div className="section landing-section">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      
           <Container>
+          <br/>
+      <br/>
+      <br/>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
+              
                 <h2 className="text-center">Request a Quote</h2>
+                
                 <Form id="miForm" className="contact-form" onSubmit={handleSubmit}>
                   <Row>
                     <Col md="12">
-                      <label>Event Type</label>
+                      <label>Event Type *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
@@ -90,14 +102,14 @@ function RequestQuote(props) {
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label>Name</label>
+                      <label>Name *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Name" name="name" onChange={handleInput} type="text" />
+                        <Input required placeholder="Name" name="name" onChange={handleInput} type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -114,25 +126,25 @@ function RequestQuote(props) {
                       </FormGroup>
                     </Col>
                     <Col md="6">
-                      <label>Email</label>
+                      <label>Email *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-email-85" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Email" name="email" onChange={handleInput} type="email" />
+                        <Input required placeholder="Email" name="email" onChange={handleInput} type="email" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label>Phone Number</label>
+                      <label>Phone Number *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-mobile" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Phone Number" onChange={handleInput} name="phone" type="number" />
+                        <Input required placeholder="Phone Number" onChange={handleInput} name="phone" type="number" />
                       </InputGroup>
                     </Col>
                     <Col md="12">
@@ -147,7 +159,7 @@ function RequestQuote(props) {
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label>Food Budget</label>
+                      <label>Food Budget *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
@@ -165,14 +177,14 @@ function RequestQuote(props) {
                       </InputGroup>
                     </Col>
                     <Col md="6">
-                      <label htmlFor="Guests">Guest Count</label>
+                      <label htmlFor="Guests">Guest Count *</label>
                       <InputGroup>
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>
                             <i className="nc-icon nc-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder="Estimate Number of Guests" onChange={handleInput} name="guest" type="text" />
+                        <Input required placeholder="Estimate Number of Guests" onChange={handleInput} name="guest" type="text" />
                       </InputGroup>
                     </Col>
                     <Col md="6">
@@ -197,7 +209,7 @@ function RequestQuote(props) {
                       />
                     </Col>
                   </Row>
-
+                      
                   <Row>
                     <Col className="ml-auto mr-auto" md="6">
                       <Button className="btn-fill" color="danger" size="lg">
@@ -205,13 +217,16 @@ function RequestQuote(props) {
                       </Button>
                     </Col>
                   </Row>
+                  
                 </Form>
               </Col>
             </Row>
           </Container>
-        </div>
       </div>
+      <br/>
+
       <FooterL />
+
     </>
   );
 }

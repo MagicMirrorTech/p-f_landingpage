@@ -20,16 +20,17 @@ import card3 from '../../assets/img/leadership/p&f-lisa.png'
 
 
 
-import card4 from "../../assets/img/wedding/danielle-sang.jpg"
-import card5 from "../../assets/img/wedding/haley-pearson.jpg"
-import card6 from "../../assets/img/wedding/lineberry_s-wedding 1.jpeg"
-import card7 from "../../assets/img/wedding/pearsons-wedding-3.jpg"
-import card8 from "../../assets/img/wedding/sangs-wedding-2.jpeg"
-import card9 from "../../assets/img/wedding/wedding-kimL.jpg"
+import card4 from "../../assets/img/wedding/1.png"
+import card5 from "../../assets/img/wedding/2.png"
+import card6 from "../../assets/img/wedding/3.png"
+import card7 from "../../assets/img/wedding/4.png"
+import card8 from "../../assets/img/wedding/5.png"
+import card9 from "../../assets/img/wedding/6.png"
 
 import NavbarTopSolid from "./NavbarSolid";
 
 import FooterL from "./Footer";
+import Commitment from "./Commitment";
 
 
 
@@ -49,9 +50,12 @@ function AboutUs(props) {
       <br/>
       <br/>
       <br/>
-
+      <br/>
+      <br/>
+      <br/>
+      <Commitment/>
       <div className="main">
-        <div className="section text-center">
+        <div className="section text-center" style={{paddingTop:'10px'}}>
           <Container>
             <h2 className="title">Leadership</h2>
             <Row>
@@ -275,34 +279,34 @@ function AboutUs(props) {
             <Row>
               <Col md="4">
                 <Card inverse>
-                  <CardImg width="100%" style={{height:"350px"}} src={card4} alt="Leadership 1" />
+                  <CardImg width="100%" style={{height:"350px"}} src={card4} alt="weeding 1" />
                 </Card>
               </Col>
               <Col md="4">
                 <Card inverse>
-                  <CardImg width="100%" src={card5} alt="Leadership 1" />
+                  <CardImg width="100%" src={card5} alt="weeding 6" />
                 </Card>
               </Col>
               <Col md="4">
                 <Card inverse >
-                  <CardImg width="50%" style={{height:"350px"}} src={card6} alt="Leadership 1" />
+                  <CardImg width="50%" style={{height:"350px"}} src={card6} alt="weeding 2" />
                 </Card>
               </Col>
             </Row>
             <Row>
               <Col md="4">
                 <Card inverse>
-                  <CardImg width="100%" style={{height:"350px"}} src={card7} alt="Leadership 1" />
+                  <CardImg width="100%" style={{height:"350px"}} src={card7} alt="weeding 3" />
                 </Card>
               </Col>
               <Col md="4">
                 <Card inverse>
-                  <CardImg width="100%" style={{height:"350px"}} src={card8} alt="Leadership 1" />
+                  <CardImg width="100%" style={{height:"350px"}} src={card8} alt="wedding 4" />
                 </Card>
               </Col>
               <Col md="4">
                 <Card inverse>
-                  <CardImg width="100%" src={card9} alt="Leadership 1" />
+                  <CardImg width="100%" src={card9} alt="weeding 5" />
                 </Card>
               </Col>
             </Row>

@@ -30,7 +30,6 @@ function NavbarTopSolid() {
   return (
     <Navbar
       className={classnames("fixed-top")}
-      color-on-scroll="300"
       expand="lg"
     >
       <Container>

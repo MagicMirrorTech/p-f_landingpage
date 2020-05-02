@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NotFound from './components/404/NotFound.js';
@@ -8,10 +8,18 @@ import MenuIdeas from './components/home/MenuIdeas'
 import Connect from "./components/home/Connect";
 import ScrollToTop from './ScrollTop'
 import Payment from './components/home/Payment';
+import { loadReCaptcha } from 'react-recaptcha-v3'
 
-const Router = () => (
+
+const Router = () => {
+  useEffect(() => {
+    loadReCaptcha('6Lc6M_EUAAAAALMOvYFn6wmWvkApMbFyHHepwEpO');
+  }, [])
+  return(
   <BrowserRouter>
+
   <ScrollToTop>
+    
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/request-quote" component={RequestQuote} />
@@ -21,8 +29,11 @@ const Router = () => (
       <Route exact path="/pay-invoice" component={Payment}/>
       <Route component={NotFound} />
     </Switch>
+    
     </ScrollToTop>
   </BrowserRouter>
-);
+
+  )
+};
 
 export default Router;

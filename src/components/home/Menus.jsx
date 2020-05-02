@@ -73,7 +73,7 @@ export const Menus = () => {
 
   return (
     <div>
-    <div className="section text-center">
+    <div className="section text-center" style={{paddingTop:'30px'}}>
     <Container>
       <h2 className="title">Menu Ideas</h2>
       <Row>

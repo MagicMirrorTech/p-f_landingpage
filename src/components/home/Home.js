@@ -21,6 +21,7 @@ import NavbarTop from './Navbar';
 import FooterL from './Footer';
 import SectionCarousel from './CarouselLanding';
 import { Menus } from './Menus';
+import Commitment from './Commitment';
 
 
 
@@ -58,10 +59,10 @@ function Home(props) {
   }
 
   return (
-    <>
+    <> 
       <NavbarTop />
       <LandingPageHeader/>
-      <br />
+      <Commitment/>
       <div className="main">
         <div id="images">
           <Container>
