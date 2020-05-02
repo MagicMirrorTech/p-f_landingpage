@@ -9,6 +9,7 @@ import Connect from "./components/home/Connect";
 import ScrollToTop from './ScrollTop'
 import Payment from './components/home/Payment';
 import { loadReCaptcha } from 'react-recaptcha-v3'
+import ReCaptchaC from './components/home/ReCaptcha';
 
 
 const Router = () => {
@@ -28,6 +29,7 @@ const Router = () => {
       <Route exact path="/connect" component={Connect}/>
       <Route exact path="/pay-invoice" component={Payment}/>
       <Route component={NotFound} />
+      <ReCaptchaC/>
     </Switch>
     
     </ScrollToTop>

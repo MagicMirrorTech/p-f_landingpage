@@ -43,15 +43,22 @@ function RequestQuote(props) {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    
+    if(!mail.event){
+      alert('Please select event type')
+    }
+    else if(!mail.budget || mail.budget === 'Select one'){
+      alert('Please select food budget')
+    }
+    else{
     axios.post(Global.url+'requestquote', mail)
     .then(({ data }) => {
-      Swal.fire('Request Quote Sent', 'Thank you for contacting us, our team will be contacting you shortly', 'success')
+      Swal.fire('Very Good', 'Request Quote sent, shortly our staff will contact you', 'success')
       document.getElementById("miForm").reset();
     })
     .catch(err => {
       console.log(err.response)
     })
+    }
   }
 
 
@@ -85,12 +92,12 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-bullet-list-67" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input name="event" required onChange={handleInput} type="select">
-                          <option value="">Select one</option>
-                          <option value="Corporate">Corporate</option>
-                          <option value="Wedding">Wedding</option>
-                          <option value="Private">Private</option>
-                          <option value="Drop Off">Drop Off</option>
+                        <Input name="event" onChange={handleInput} type="select">
+                          <option defaultValue="disabled">Select one</option>
+                          <option>Corporate</option>
+                          <option>Wedding</option>
+                          <option>Private</option>
+                          <option>Drop Off</option>
                         </Input>
                       </InputGroup>
                     </Col>
@@ -159,13 +166,13 @@ function RequestQuote(props) {
                             <i className="nc-icon nc-bullet-list-67" />
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input required onChange={handleInput} name="budget" type="select">
-                          <option value="">Select one</option>
-                          <option value="500-2,000">500 - 2,000</option>
-                          <option value="2,001-5,000">2,001 - 5,000</option>
-                          <option value="5,001-10,000">5,001 - 10,000</option>
-                          <option value="10,001-35,000">10,001 - 35,000</option>
-                          <option value="35,000+">35,000+</option>
+                        <Input placeholder="Name" onChange={handleInput} name="budget" type="select">
+                          <option>Select one</option>
+                          <option>500 - 2,000</option>
+                          <option>2,001 - 5,000</option>
+                          <option>5,001 - 10,000</option>
+                          <option>10,001 - 35,000</option>
+                          <option>35,000+</option>
                         </Input>
                       </InputGroup>
                     </Col>
