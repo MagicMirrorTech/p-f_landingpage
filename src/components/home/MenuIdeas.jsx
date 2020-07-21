@@ -20,7 +20,7 @@ function MenuIdeas(props) {
       document.body.classList.remove("profile-page");
     };
   });
-
+  document.title = "Corporate Catering, High Point"
   return (
     <>
       <NavbarTopSolid/>

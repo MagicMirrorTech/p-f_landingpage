@@ -13,7 +13,8 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  Spinner
 } from "reactstrap";
 
 import LandingPageHeader from './LandingPageHeader';
@@ -22,12 +23,18 @@ import FooterL from './Footer';
 import SectionCarousel from './CarouselLanding';
 import { Menus } from './Menus';
 import Commitment from './Commitment';
+import Reaptcha from 'reaptcha';
+import Global from "../../Global";
+
+
 
 
 
 
 function Home(props) {
   const [mail, setMail] = useState({})
+  const [spinner, setSpinner] = useState(false)
+  const [verified, setVerified] = useState(false)
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -44,13 +51,46 @@ function Home(props) {
       [e.target.name]: e.target.value
     }))
   }
+  const onVerify = recaptchaResponse => {
+    setVerified(true)
+ 
+   };
+   const onExpire = recaptchaResponse => {
+     setVerified(false);
+  
+    };
 
   const handleSubmit = async e => {
     e.preventDefault()
-    axios.post('https://pflanding.herokuapp.com/contact', mail)
+    setSpinner(true)
+    let myVar = setTimeout(function(){
+      Swal.fire({
+        title: 'Oops...',
+        text: "Sorry, your internet connection is letting you down. Please try again when you have a moment",
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+          window.location.reload() 
+      })
+     }, 20000);
+    axios.post(Global.url+'contact', mail)
     .then(({ data }) => {
-      Swal.fire('Message Sent', 'Thank you for contacting us, our team will be contacting you shortly.', 'success')
-      document.getElementById("miForm").reset();
+      setSpinner(false)
+      clearTimeout(myVar)
+      Swal.fire({
+        title: 'Message Sent',
+        text: "Thank you for contacting us, our team will be contacting you shortly",
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+          window.location.reload() 
+      })
     })
     .catch(err => {
       console.log(err.response)
@@ -60,6 +100,10 @@ function Home(props) {
 
   return (
     <> 
+    <div style={{position:"relative", zIndex:"0"}}>
+      <div style={{display:"flex",backgroundColor:"rgba(183,183,183,0.5)", alignContent:"center", justifyContent:"center",height:"100%", width:"100%", alignItems:"center", visibility:spinner?"visible":'hidden', position:"absolute", zIndex:"1" }}>
+      <Spinner style={{ width: '3rem', height: '3rem' }} />
+      </div>
       <NavbarTop />
       <LandingPageHeader/>
       <Commitment/>
@@ -275,9 +319,14 @@ function Home(props) {
                     onChange={handleInput}
                     name="message"
                   />
+                  <br/>
+                  <Col className="ml-auto mr-auto" md="6">
+                    <Reaptcha sitekey="6LeYqfEUAAAAAKfB6AtMLikvU3GyEX0y12gNrpmv" onExpire={onExpire} onVerify={onVerify} />
+                    </Col>
                   <Row>
+                  
                     <Col className="ml-auto mr-auto" md="4">
-                      <Button className="btn-fill" color="danger" size="lg">
+                      <Button disabled={!verified} className="btn-fill" color="danger" size="lg">
                         Send Message
                       </Button>
                     </Col>
@@ -289,6 +338,7 @@ function Home(props) {
         </div>
       </div>
       <FooterL />
+      </div>
     </>
   );
 }

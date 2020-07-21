@@ -2,6 +2,11 @@ import React, {useState} from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Global from '../../Global'
+import {Spinner} from 'reactstrap'
+import {withRouter} from 'react-router-dom'
+import Reaptcha from 'reaptcha';
+
+
 import {
   Button,
   
@@ -23,7 +28,9 @@ import NavbarTopSolid from './NavbarSolid';
 
 function RequestQuote(props) {
   const [mail, setMail] = useState({})
-  
+  const [spinner, setSpinner] = useState(false)
+  const [verified, setVerified] = useState(false)
+
 
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -41,22 +48,66 @@ function RequestQuote(props) {
     }))
   }
 
-  const handleSubmit = async e => {
+  const onVerify = recaptchaResponse => {
+   setVerified(true) 
+
+  };
+  const onExpire = recaptchaResponse => {
+    setVerified(false);
+ 
+   };
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
+    let myVar = setTimeout(function(){
+      Swal.fire({
+        title: 'Oops...',
+        text: "Sorry, your internet connection is letting you down. Please try again when you have a moment",
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+          window.location.reload() 
+      })
+     }, 20000);
+
+    setSpinner(true)
     axios.post(Global.url+'requestquote', mail)
     .then(({ data }) => {
-      Swal.fire('Request Quote Sent', 'Thank you for contacting us, our team will be contacting you shortly', 'success')
-      document.getElementById("miForm").reset();
+      setSpinner(false)
+      clearTimeout(myVar)
+      Swal.fire({
+        title: 'Request Quote Sent',
+        text: "Thank you for contacting us, our team will be contacting you shortly",
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok'
+      }).then((result) => {
+          window.location.reload() 
+      })
+      console.log('se envió el email')
+
     })
     .catch(err => {
       console.log(err.response)
     })
+    
+    
   }
 
+  document.title = "Best Corporate Caterers"
 
   return (
     <>
+   
+    <div style={{position:"relative", zIndex:"0"}}>
+      <div style={{display:"flex",backgroundColor:"rgba(183,183,183,0.5)", alignContent:"center", justifyContent:"center",height:"100%", width:"100%", alignItems:"center", visibility:spinner?"visible":'hidden', position:"absolute", zIndex:"1" }}>
+          <Spinner style={{ width: '3rem', height: '3rem' }} />
+      </div>
       <NavbarTopSolid/>
       
       
@@ -67,12 +118,14 @@ function RequestQuote(props) {
       <br/>
       
           <Container>
+         
           <br/>
-      <br/>
-      <br/>
+          <br/>
+          <br/>
+          
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-              
+                
                 <h2 className="text-center">Request a Quote</h2>
                 
                 <Form id="miForm" className="contact-form" onSubmit={handleSubmit}>
@@ -200,12 +253,17 @@ function RequestQuote(props) {
                         onChange={handleInput}
                         name="thoughts"
                       />
+                      <br/>
+                    </Col>
+                    
+                    <Col className="ml-auto mr-auto" md="6">
+                    <Reaptcha id="reC" sitekey="6LeYqfEUAAAAAKfB6AtMLikvU3GyEX0y12gNrpmv" onExpire={onExpire} onVerify={onVerify} />
                     </Col>
                   </Row>
                       
                   <Row>
                     <Col className="ml-auto mr-auto" md="6">
-                      <Button className="btn-fill" color="danger" size="lg">
+                      <Button disabled={!verified} className="btn-fill" color="danger" size="lg">
                         Start Your Custom Experience
                       </Button>
                     </Col>
@@ -215,13 +273,14 @@ function RequestQuote(props) {
               </Col>
             </Row>
           </Container>
+
       </div>
       <br/>
 
       <FooterL />
-
+      </div> 
     </>
   );
 }
 
-export default RequestQuote;
+export default withRouter(RequestQuote);

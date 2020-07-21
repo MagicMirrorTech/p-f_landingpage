@@ -156,6 +156,7 @@ function Payment(props) {
 
   }
 
+  document.title = "Best Wedding Caterers near me"
 
   
   return (

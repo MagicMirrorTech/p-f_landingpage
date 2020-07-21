@@ -42,7 +42,7 @@ function AboutUs(props) {
       document.body.classList.remove("profile-page");
     };
   });
-
+  document.title = "Best Caterers for Market"
   return (
     <>
       <NavbarTopSolid/>
