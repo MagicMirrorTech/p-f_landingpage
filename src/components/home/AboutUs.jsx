@@ -101,10 +101,55 @@ function AboutUs(props) {
         </div>
 
         <div className="section section-dark text-center">
-          <Container>
+          <div className="container-cards-flex"  >
             <h2 className="title">Corporate Partners</h2>
-            <Row>
-              <Col md="3">
+            <Row className="text-center-cards">
+            <Col md="2">
+            <Card className="card-profile card-plain">
+              <div className="card-avatar">
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <img
+                    style={{ height: "120px", backgroundColor:"white" }}
+                    alt="conference center logo"
+                    src={require("../../assets/img/partners/Conference-Center-Logo.png")}
+                  />
+                </a>
+              </div>
+              <CardBody style={{marginBottom:"65px"}}>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <div className="author">
+                    <CardTitle tag="h4">THE CONFERENCE CENTER AT GTCC</CardTitle>
+                  </div>
+                </a>
+                <p className="card-description text-center">
+                Inspiring. Flexible. Purposeful.<br/>
+                With corporate meetings at the heart of its mission, The Conference Center at GTCC is sure
+                to provide a professional conference space with all of the modern amenities you would expect 
+                for your company’s meeting needs.
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                </p>
+              </CardBody>
+              <CardFooter className="text-center">
+                <div className="col text-center">
+                  <Button
+                    className="btn-round"
+                    outline
+                    color="neutral"
+                    href="https://conferencecentergtcc.com/catering/"
+                    size="lg"
+                    target="_blank"
+                  >
+                    Visit website
+                  </Button>
+                </div>
+              </CardFooter>
+            </Card>
+          </Col>
+              <Col md="2">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -126,9 +171,13 @@ function AboutUs(props) {
                       wide array of career technical programs ranging from
                       Culinary and Hospitality Management to Computer Technology
                       to Health Science programs.
+                      <br/>
+                      <br/>
+                      <br/>
+                      <br/>
                     </p>
                   </CardBody>
-                  <CardFooter className="text-center">
+                  <CardFooter className="text-center" style={{paddingTop:'20px'}}>
                     <div className="col text-center">
                       <Button
                         className="btn-round"
@@ -144,7 +193,8 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="3">
+
+              <Col md="2">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -168,6 +218,11 @@ function AboutUs(props) {
                     of our community ensuring the availability of a broad range of cultural 
                     and artistic activities and encouraging full community participation in 
                     them.
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -186,7 +241,7 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="3">
+              <Col md="2">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -210,9 +265,11 @@ function AboutUs(props) {
                     Serious retail home furnishings buyers, interior designers, architects, and others 
                     in the home furnishings industry can be found in High Point twice a year because if 
                     you can’t find it in High Point…it probably doesn’t exist.
+                    <br/>
+                    <br/>
                     </p>
                   </CardBody>
-                  <CardFooter className="text-center">
+                  <CardFooter className="text-center" style={{paddingTop:'10px'}}>
                     <div className="col text-center">
                       <Button
                         className="btn-round"
@@ -228,7 +285,7 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="3">
+              <Col md="2">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -252,6 +309,7 @@ function AboutUs(props) {
                     through travel and tourism. Travelers to the region and Triad 
                     residents alike can experience a venue like no other at the High 
                     Point Convention and Visitors Bureau’s Regional Visitors Center.
+                    <br/><br/>
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -271,7 +329,7 @@ function AboutUs(props) {
                 </Card>
               </Col>
             </Row>
-          </Container>
+          </div>
         </div>
         <div className="section text-center">
           <Container>

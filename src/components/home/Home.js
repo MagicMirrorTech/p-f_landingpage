@@ -114,7 +114,7 @@ function Home(props) {
               <h2>Proud Partners</h2>
             </div>
             <Row>
-              <Col className="mr-auto ml-auto" md="3" sm="6">
+              <Col className="mr-auto ml-auto" md="2" sm="6">
                 <h4 className="images-title text-center">GTCC</h4>
                 <img
                   alt="..."
@@ -123,7 +123,7 @@ function Home(props) {
                 />
               </Col>
 
-              <Col className="mr-auto ml-auto" md="3" sm="6">
+              <Col className="mr-auto ml-auto" md="2" sm="6">
                 <h4 className="images-title text-center">HIGH POINT ARTS</h4>
                 <img
                   height="110px"
@@ -132,7 +132,7 @@ function Home(props) {
                   src={require("../../assets/img/partners/High-Point-Arts.png")}
                 />
               </Col>
-              <Col className="mr-auto ml-auto" md="3" sm="6">
+              <Col className="mr-auto ml-auto" md="2" sm="6">
                 <h4 className="images-title text-center">HIGH POINT MARKET</h4>
                 <img
                   height="110px"
@@ -141,7 +141,7 @@ function Home(props) {
                   src={require("../../assets/img/partners/HP-maket.png")}
                 />
               </Col>
-              <Col className="mr-auto ml-auto" md="3" sm="6">
+              <Col className="mr-auto ml-auto" md="2" sm="6">
                 <h4 style={{fontSize:"16px"}} className="images-title text-center">HIGH POINT CONVENTION AND BUSINESS BUREAU</h4>
                 <img
                   width="255px"
@@ -149,6 +149,15 @@ function Home(props) {
                   alt="..."
                   className="img-rounded  img-responsive"
                   src={require("../../assets/img/partners/hpconvention.jpg")}
+                />
+              </Col>
+              <Col className="mr-auto ml-auto" md="2" sm="6">
+                <h4 style={{fontSize:"18px"}} className="images-title text-center">THE CONFERENCE CENTER AT GTCC</h4>
+                <img
+                  height="110px"
+                  alt="..."
+                  className="img-rounded  img-responsive"
+                  src={require("../../assets/img/partners/Conference-Center-Logo.png")}
                 />
               </Col>
             </Row>
