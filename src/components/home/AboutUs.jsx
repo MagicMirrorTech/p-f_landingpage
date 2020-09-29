@@ -95,28 +95,28 @@ function AboutUs(props) {
                 </CardFooter>
                 </Card>
               </Col>
-              
+
             </Row>
           </Container>
         </div>
 
         <div className="section section-dark text-center">
           <div className="container-cards-flex"  >
-            <h2 className="title">Corporate Partners</h2>
+            <h2 className="title partner-titles">Corporate Partners</h2>
             <Row className="text-center-cards">
-            <Col md="2">
-            <Card className="card-profile card-plain">
+            <Col>
+            <Card id="first-in-row" className="card-profile card-plain">
               <div className="card-avatar">
-                <a href="#pablo" onClick={e => e.preventDefault()}>
+                <a href="https://conferencecentergtcc.com/catering/" onClick={e => e.preventDefault()}>
                   <img
-                    style={{ height: "120px", backgroundColor:"white" }}
+                    style={{ height: "120px", objectFit:"contain", backgroundColor:"white" }}
                     alt="conference center logo"
                     src={require("../../assets/img/partners/Conference-Center-Logo.png")}
                   />
                 </a>
               </div>
               <CardBody style={{marginBottom:"65px"}}>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
+                <a href="#" onClick={e => e.preventDefault()}>
                   <div className="author">
                     <CardTitle tag="h4">THE CONFERENCE CENTER AT GTCC</CardTitle>
                   </div>
@@ -124,13 +124,8 @@ function AboutUs(props) {
                 <p className="card-description text-center">
                 Inspiring. Flexible. Purposeful.<br/>
                 With corporate meetings at the heart of its mission, The Conference Center at GTCC is sure
-                to provide a professional conference space with all of the modern amenities you would expect 
+                to provide a professional conference space with all of the modern amenities you would expect
                 for your company’s meeting needs.
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 </p>
               </CardBody>
               <CardFooter className="text-center">
@@ -149,12 +144,12 @@ function AboutUs(props) {
               </CardFooter>
             </Card>
           </Col>
-              <Col md="2">
+              <Col >
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <img
-                        style={{ height: "120px" }}
+                        style={{ height: "120px" , objectFit:"contain" , backgroundColor:"white" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/gtcc.png")}
                       />
@@ -171,10 +166,6 @@ function AboutUs(props) {
                       wide array of career technical programs ranging from
                       Culinary and Hospitality Management to Computer Technology
                       to Health Science programs.
-                      <br/>
-                      <br/>
-                      <br/>
-                      <br/>
                     </p>
                   </CardBody>
                   <CardFooter className="text-center" style={{paddingTop:'20px'}}>
@@ -186,7 +177,7 @@ function AboutUs(props) {
                         href="https://www.gtcc.edu/about"
                         size="lg"
                         target="_blank"
-                      >
+                        >
                         Visit website
                       </Button>
                     </div>
@@ -194,35 +185,30 @@ function AboutUs(props) {
                 </Card>
               </Col>
 
-              <Col md="2">
+              <Col >
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <img
 
-                        style={{ height: "120px", backgroundColor:"white" }}
+                        style={{ height: "120px", objectFit:"contain" , backgroundColor:"white" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/partners/High-Point-Arts.png")}
                       />
                     </a>
                   </div>
                   <CardBody style={{marginBottom:"65px"}}>
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h4">HIGH POINT ARTS</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
-                    Since 1962 the Arts Council has served the arts needs of the community. 
-                    Our mission is to work continually to enhance the lives of all citizens 
-                    of our community ensuring the availability of a broad range of cultural 
-                    and artistic activities and encouraging full community participation in 
+                    Since 1962 the Arts Council has served the arts needs of the community.
+                    Our mission is to work continually to enhance the lives of all citizens
+                    of our community ensuring the availability of a broad range of cultural
+                    and artistic activities and encouraging full community participation in
                     them.
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -241,32 +227,30 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="2">
+              <Col >
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <img
                         height="100px"
-                        style={{ height: "120px", backgroundColor:"white" }}
+                        style={{ height: "120px", objectFit:"contain" , backgroundColor:"white" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/partners/HP-maket.png")}
                       />
                     </a>
                   </div>
                   <CardBody>
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h4">HIGH POINT MARKET</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
                     The High Point Market is the largest furnishings industry trade show in the world,
-                    bringing more than 75,000 people to High Point, North Carolina, every six months. 
-                    Serious retail home furnishings buyers, interior designers, architects, and others 
-                    in the home furnishings industry can be found in High Point twice a year because if 
+                    bringing more than 75,000 people to High Point, North Carolina, every six months.
+                    Serious retail home furnishings buyers, interior designers, architects, and others
+                    in the home furnishings industry can be found in High Point twice a year because if
                     you can’t find it in High Point…it probably doesn’t exist.
-                    <br/>
-                    <br/>
                     </p>
                   </CardBody>
                   <CardFooter className="text-center" style={{paddingTop:'10px'}}>
@@ -285,29 +269,29 @@ function AboutUs(props) {
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="2">
+              <Col>
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <img
                         height="100px"
-                        style={{ height: "120px" }}
+                        style={{ height: "120px", objectFit:"contain" }}
                         alt="gtcc logo"
                         src={require("../../assets/img/partners/hpconvention.jpg")}
                       />
                     </a>
                   </div>
                   <CardBody style={{marginBottom:"50px"}}>
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle style={{fontSize:"18px"}} tag="h4">HIGH POINT CONVENTION AND BUSINESS BUREAU</CardTitle>
                       </div>
                     </a>
                     <p className="card-description text-center">
                     The mission of the High Point Convention & Visitors Bureau
-                    is to promote and encourage economic development in High Point 
-                    through travel and tourism. Travelers to the region and Triad 
-                    residents alike can experience a venue like no other at the High 
+                    is to promote and encourage economic development in High Point
+                    through travel and tourism. Travelers to the region and Triad
+                    residents alike can experience a venue like no other at the High
                     Point Convention and Visitors Bureau’s Regional Visitors Center.
                     <br/><br/>
                     </p>
@@ -377,4 +361,3 @@ function AboutUs(props) {
 }
 
 export default withRouter(AboutUs);
-

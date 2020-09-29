@@ -780,6 +780,7 @@ code {
     bottom: 30px
 }
 
+
 @media only screen and (max-width:480px) {
     .jp-card .jp-card-front .jp-card-lower {
         width: 90%;
@@ -954,5 +955,60 @@ code {
 .text-center-cards {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    overflow-x: scroll !important;
+    flex-wrap: nowrap !important;
+    padding-left: 1350px;
+}
+
+.col {
+  width: 420px !important;
+  margin: auto 50px;
+}
+
+#first-in-row {
+ margin-left: 30px;
+}
+
+.card-footer .col {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 560px) and (min-width: 360px) {
+
+  .text-center-cards {
+      padding-left: 2050px;
+  }
+
+  .col {
+    width: 400px !important;
+  }
+
+}
+
+
+@media screen and (max-width: 954px) and (min-width: 560px) {
+
+  .text-center-cards {
+      padding-left: 1850px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 1099px) and (min-width: 955px) {
+
+  .text-center-cards {
+      padding-left: 1450px;
+  }
+
+}
+
+
+@media screen and (min-width: 1350px) {
+
+  .text-center-cards {
+      padding-left: 750px;
+  }
+
 }

@@ -35,7 +35,7 @@ function NavbarTop() {
 
   React.useEffect(() => {
     const updateNavbarColor = () => {
-      
+
      if (
         (document.documentElement.scrollTop > 299 && visible) ||
         (document.body.scrollTop > 299 && visible)
@@ -58,8 +58,8 @@ function NavbarTop() {
         document.getElementById("navbar").style.marginTop= "90px"
 
       }
-      
-      
+
+
       else if (
         document.documentElement.scrollTop < 300 ||
         document.body.scrollTop < 300
@@ -79,7 +79,7 @@ function NavbarTop() {
     <Alert color="danger" isOpen={visible} toggle={onDismiss} style={{color:'black',margin:'0', padding:'10px 10px 10px 5px',width:'100%',height:'120px'}}>
     <b>A notice to our valued customers:</b><br/>
     We are taking the utmost precaution in this difficult time to maintain our most stringent standards in culinary preparation. In addition, we are now offering clients the options to have food individually packaged for take home meals.
-    Plain and Fancy is paying close attention, as are all of you, to the ever changing guidelines set forth by our state and federal agencies. We will continue to monitor and practice all safety guidelines in the interest of our employees, families and community. 
+    Plain and Fancy is paying close attention, as are all of you, to the ever changing guidelines set forth by our state and federal agencies. We will continue to monitor and practice all safety guidelines in the interest of our employees, families and community.
     <br/>
     <b>Thank you for your patronage and look forward to seeing you in the near future.</b>
     </Alert>
@@ -149,7 +149,7 @@ function NavbarTop() {
             </NavItem>
 
             <NavItem>
-              <NavLink to="/pay-invoice" style={{fontSize:"16px"}} tag={Link}>
+              <NavLink to="/pay-invoice" style={{fontSize:"16px"}} tag={Link} hidden>
                 Pay Bill
               </NavLink>
             </NavItem>

@@ -53,11 +53,11 @@ function Home(props) {
   }
   const onVerify = recaptchaResponse => {
     setVerified(true)
- 
+
    };
    const onExpire = recaptchaResponse => {
      setVerified(false);
-  
+
     };
 
   const handleSubmit = async e => {
@@ -73,7 +73,7 @@ function Home(props) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Ok'
       }).then((result) => {
-          window.location.reload() 
+          window.location.reload()
       })
      }, 20000);
     axios.post(Global.url+'contact', mail)
@@ -89,17 +89,17 @@ function Home(props) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Ok'
       }).then((result) => {
-          window.location.reload() 
+          window.location.reload()
       })
     })
     .catch(err => {
       console.log(err.response)
     })
-    
+
   }
 
   return (
-    <> 
+    <>
     <div style={{position:"relative", zIndex:"0"}}>
       <div style={{display:"flex",backgroundColor:"rgba(183,183,183,0.5)", alignContent:"center", justifyContent:"center",height:"100%", width:"100%", alignItems:"center", visibility:spinner?"visible":'hidden', position:"absolute", zIndex:"1" }}>
       <Spinner style={{ width: '3rem', height: '3rem' }} />
@@ -114,6 +114,15 @@ function Home(props) {
               <h2>Proud Partners</h2>
             </div>
             <Row>
+              <Col className="mr-auto ml-auto" md="2" sm="6">
+                <h4 style={{fontSize:"18px"}} className="images-title text-center">THE CONFERENCE CENTER AT GTCC</h4>
+                <img
+                  height="110px"
+                  alt="..."
+                  className="img-rounded  img-responsive"
+                  src={require("../../assets/img/partners/Conference-Center-Logo.png")}
+                />
+              </Col>
               <Col className="mr-auto ml-auto" md="2" sm="6">
                 <h4 className="images-title text-center">GTCC</h4>
                 <img
@@ -151,15 +160,7 @@ function Home(props) {
                   src={require("../../assets/img/partners/hpconvention.jpg")}
                 />
               </Col>
-              <Col className="mr-auto ml-auto" md="2" sm="6">
-                <h4 style={{fontSize:"18px"}} className="images-title text-center">THE CONFERENCE CENTER AT GTCC</h4>
-                <img
-                  height="110px"
-                  alt="..."
-                  className="img-rounded  img-responsive"
-                  src={require("../../assets/img/partners/Conference-Center-Logo.png")}
-                />
-              </Col>
+
             </Row>
           </Container>
         </div>
@@ -333,7 +334,7 @@ function Home(props) {
                     <Reaptcha sitekey="6LeYqfEUAAAAAKfB6AtMLikvU3GyEX0y12gNrpmv" onExpire={onExpire} onVerify={onVerify} />
                     </Col>
                   <Row>
-                  
+
                     <Col className="ml-auto mr-auto" md="4">
                       <Button disabled={!verified} className="btn-fill" color="danger" size="lg">
                         Send Message

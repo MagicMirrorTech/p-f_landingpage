@@ -26,7 +26,7 @@ function NavbarTopSolid() {
     document.documentElement.classList.toggle("nav-open");
   };
 
-  
+
   return (
     <Navbar
       className={classnames("fixed-top")}
@@ -91,7 +91,7 @@ function NavbarTopSolid() {
             </NavItem>
 
             <NavItem>
-              <NavLink to="/pay-invoice" style={{fontSize:"16px"}} tag={Link}>
+              <NavLink to="/pay-invoice" style={{fontSize:"16px"}} tag={Link} hidden>
                 Pay Bill
               </NavLink>
             </NavItem>
