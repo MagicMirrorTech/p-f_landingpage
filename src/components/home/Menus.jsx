@@ -389,7 +389,7 @@ export const Menus = () => {
           {/*<div className="flip-box-inner">*/}
             <div onClick={toggleModal7} className="flip-box-front" style={{backgroundImage: `url(${menu7})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
               <div className="front-text">
-              <h2>Hors D'Ouvres</h2>
+              <h2>Hors d’Oeuvres</h2>
               </div>
             </div>
           </div>
@@ -408,7 +408,7 @@ export const Menus = () => {
                 className="modal-title text-center"
                 id="exampleModalLabel"
               >
-              Hors D'Ouvres
+              Hors d’Oeuvres
               </h5>
             </div>
             <div className="modal-body" >
