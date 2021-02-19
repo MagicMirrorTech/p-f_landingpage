@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // reactstrap components
 import {
@@ -9,7 +9,7 @@ import {
   Carousel,
   CarouselItem,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption, CarouselControl
 } from "reactstrap";
 
 // core components
@@ -43,99 +43,62 @@ const items = [
 ];
 
 function SectionCarousel() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const [animating, setAnimating] = React.useState(false);
-  const onExiting = () => {
-    setAnimating(true);
-  };
-  const onExited = () => {
-    setAnimating(false);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
   const next = () => {
     if (animating) return;
     const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
-  };
+  }
+
   const previous = () => {
     if (animating) return;
     const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
-  };
-  const goToIndex = newIndex => {
+  }
+
+  const goToIndex = (newIndex) => {
     if (animating) return;
     setActiveIndex(newIndex);
-  };
+  }
+
+  const slides = items.map((item) => {
+    return (
+        <CarouselItem
+            onExiting={() => setAnimating(true)}
+            onExited={() => setAnimating(false)}
+            key={item.src}>
+          <img src={item.src} alt={item.altText} />
+          <CarouselCaption className="" captionText="" captionHeader={item.caption} />
+        </CarouselItem>
+    );
+  });
+
   return (
-    <>
       <div className="section pt-o" id="carousel" style={{ marginBottom: '-30px', paddingTop: '-10px'}}>
         <Container>
           <h2 className=" text-center">Events</h2>
           <br/>
-         
           <Row>
             <Col className="ml-auto mr-auto" md="8">
               <Card className="page-carousel">
                 <Carousel
-                  activeIndex={activeIndex}
-                  next={next}
-                  previous={previous}
-                >
-                  <CarouselIndicators
-                    items={items}
+                    interval={2000}
                     activeIndex={activeIndex}
-                    onClickHandler={goToIndex}
-                  />
-                  {items.map(item => {
-                    return (
-                      <CarouselItem
-                        onExiting={onExiting}
-                        onExited={onExited}
-                        key={item.src}
-                      >
-                        <img src={item.src} alt={item.altText} />
-                        <CarouselCaption
-                          className="carouselText"
-                          captionText=""
-                          captionHeader={item.caption}
-                        />
-                      </CarouselItem>
-                      
-                    );
-                  })}
-                  <a
-                    className="left carousel-control carousel-control-prev"
-                    data-slide="prev"
-                    href="#pablo"
-                    onClick={e => {
-                      e.preventDefault();
-                      previous();
-                    }}
-                    role="button"
-                  >
-                    <span className="fa fa-angle-left" />
-                    <span className="sr-only">Previous</span>
-                  </a>
-                  <a
-                    className="right carousel-control carousel-control-next"
-                    data-slide="next"
-                    href="#pablo"
-                    onClick={e => {
-                      e.preventDefault();
-                      next();
-                    }}
-                    role="button"
-                  >
-                    <span className="fa fa-angle-right" />
-                    <span className="sr-only">Next</span>
-                  </a>
+                    next={next}
+                    previous={previous}>
+                  <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                  {slides}
+                  <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+                  <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
                 </Carousel>
               </Card>
             </Col>
           </Row>
         </Container>
-      </div>{" "}
-    </>
-  );
+      </div>
+  )
 }
 
 export default SectionCarousel;

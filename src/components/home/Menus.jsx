@@ -15,14 +15,14 @@ import menu6 from '../../assets/img/menus/light.png'
 import menu7 from '../../assets/img/menus/apps.png'
 import menu8 from '../../assets/img/menus/desserts.png'
 
-import breakfast from '../../assets/img/menus/breakfast.pdf'
-import hotlunch from '../../assets/img/menus/hotlunch.pdf'
-import boxedlunch from '../../assets/img/menus/boxedlunch.pdf'
-import comfort from '../../assets/img/menus/comfort.pdf'
-import classic from '../../assets/img/menus/classic.pdf'
-import light from '../../assets/img/menus/light.pdf'
-import hors from '../../assets/img/menus/hors.pdf'
-import desserts from '../../assets/img/menus/desserts.pdf'
+import breakfast from '../../assets/img/menus/breakfast-menu.png'
+import hotlunch from '../../assets/img/menus/hotlunch-menu.png'
+import boxedlunch from '../../assets/img/menus/boxed_lunch-menu.png'
+import comfort from '../../assets/img/menus/comfort-menu.png'
+import classic from '../../assets/img/menus/classic-menu.png'
+import light from '../../assets/img/menus/light-menu.png'
+import hors from '../../assets/img/menus/apps-menu.png'
+import desserts from '../../assets/img/menus/desserts-menu.png'
 
 
 export const Menus = () => {
@@ -81,7 +81,7 @@ export const Menus = () => {
           <Col md="6">
             <div className="flip-box">
               {/*<div className="flip-box-inner">*/}
-                <div onClick={toggleModal} className="flip-box-front" style={{backgroundImage: `url(${menu1})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+                <div onClick={toggleModal} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu1})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                   <div className="front-text">
                   <h2>Breakfast</h2>
                   </div>
@@ -132,7 +132,7 @@ export const Menus = () => {
           <Col md="6">
             <div className="flip-box">
               {/*<div className="flip-box-inner">*/}
-                <div onClick={toggleModal2} className="flip-box-front" style={{backgroundImage: `url(${menu2})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+                <div onClick={toggleModal2} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu2})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                   <div className="front-text">
                   <h2>Hot Lunches</h2>
                   </div>
@@ -183,7 +183,7 @@ export const Menus = () => {
           <Col md="6">
             <div className="flip-box">
               {/*<div className="flip-box-inner">*/}
-                <div onClick={toggleModal3} className="flip-box-front" style={{backgroundImage: `url(${menu3})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+                <div onClick={toggleModal3} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu3})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                   <div className="front-text">
                   <h2>Boxed Lunches</h2>
                   </div>
@@ -234,7 +234,7 @@ export const Menus = () => {
           <Col md="6">
             <div className="flip-box">
               {/*<div className="flip-box-inner">*/}
-                <div onClick={toggleModal4} className="flip-box-front" style={{backgroundImage: `url(${menu4})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+                <div onClick={toggleModal4} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu4})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                   <div className="front-text">
                   <h2>Comfort Fare</h2>
                   </div>
@@ -285,7 +285,7 @@ export const Menus = () => {
           <Col md="6">
           <div className="flip-box">
             {/*<div className="flip-box-inner">*/}
-              <div onClick={toggleModal5} className="flip-box-front" style={{backgroundImage: `url(${menu5})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+              <div onClick={toggleModal5} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu5})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                 <div className="front-text">
                 <h2>Classic Fare</h2>
                 </div>
@@ -336,7 +336,7 @@ export const Menus = () => {
         <Col md="6">
           <div className="flip-box">
             {/*<div className="flip-box-inner">*/}
-              <div onClick={toggleModal6} className="flip-box-front" style={{backgroundImage: `url(${menu6})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+              <div onClick={toggleModal6} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu6})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
                 <div className="front-text">
                 <h2>Lighter Fare</h2>
                 </div>
@@ -387,14 +387,14 @@ export const Menus = () => {
         <Col md="6">
         <div className="flip-box">
           {/*<div className="flip-box-inner">*/}
-            <div onClick={toggleModal7} className="flip-box-front" style={{backgroundImage: `url(${menu7})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+            <div onClick={toggleModal7} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu7})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
               <div className="front-text">
               <h2>Hors d’Oeuvres</h2>
               </div>
             </div>
           </div>
         {/*</div>*/}
-        <Modal id="modal-1" size='lg' style={{marginTop:"-50px"}}  isOpen={modal7} toggle={toggleModal7}>
+        <Modal id="modal-1" size='lg' style={{marginTop:"-50px", textAlign:"center"}}  isOpen={modal7} toggle={toggleModal7}>
             <div className="modal-header">
               <button
                 aria-label="Close"
@@ -412,7 +412,7 @@ export const Menus = () => {
               </h5>
             </div>
             <div className="modal-body" >
-            <object aria-label="foo"  width="100%" height="500px" data={hors}></object>
+            <object aria-label="foo"  width="50%" height="100%" data={hors}></object>
 
             </div>
             <center>
@@ -438,14 +438,14 @@ export const Menus = () => {
       <Col md="6">
       <div className="flip-box">
         {/*<div className="flip-box-inner">*/}
-          <div onClick={toggleModal8} className="flip-box-front" style={{backgroundImage: `url(${menu8})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
+          <div onClick={toggleModal8} className="flip-box-front" style={{cursor:'pointer', backgroundImage: `url(${menu8})`, backgroundSize: 'Cover', backgroundRepeat: 'noRepeat' }}>
             <div className="front-text">
             <h2>Desserts</h2>
             </div>
           </div>
         </div>
       {/*</div>*/}
-      <Modal id="modal-1" size='lg' style={{marginTop:"-50px"}}  isOpen={modal8} toggle={toggleModal8}>
+      <Modal id="modal-1" size='lg' style={{marginTop:"-50px", textAlign:"center"}}  isOpen={modal8} toggle={toggleModal8}>
           <div className="modal-header">
             <button
               aria-label="Close"
@@ -463,7 +463,7 @@ export const Menus = () => {
             </h5>
           </div>
           <div className="modal-body" >
-          <object aria-label="foo"  width="100%" height="500px" data={desserts}></object>
+          <object aria-label="foo"  width="50%" height="100%" data={desserts}></object>
 
           </div>
           <center>

@@ -54,7 +54,7 @@ function MenuIdeas(props) {
             <Row>
               <Col md="4">
                 <img
-                  style={{ marginBottom: "30px" }}
+                  style={{ marginBottom: "30px"}}
                   alt="..."
                   className="img-rounded img-responsive"
                   src={require("../../assets/img/pf1.png")}
